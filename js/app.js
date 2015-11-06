@@ -13,6 +13,22 @@ bgImage.onload = function () {
 };
 bgImage.src = "./images/background.png";
 
+// Hero image
+var heroReady = false;
+var heroImage = new Image();
+heroImage.onload = function () {
+	heroReady = true;
+};
+heroImage.src = "./images/hero.png";
+
+// Monster image
+var monsterReady = false;
+var monsterImage = new Image();
+monsterImage.onload = function () {
+	monsterReady = true;
+};
+monsterImage.src = "./images/monster.png";
+
 // Game objects
 var hero = {
 	speed: 256, // movement in pixels per second
@@ -109,3 +125,8 @@ var main = function () {
 	// Request to do this again ASAP
 	requestAnimationFrame(main);
 };
+
+// Let's play this game!
+var then = Date.now();
+reset();
+main();
