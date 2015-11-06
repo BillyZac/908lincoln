@@ -1,3 +1,5 @@
+var postId = 0
+
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
@@ -61,6 +63,9 @@ var reset = function () {
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
+
+  // Get the next reddit title
+  postId++
 };
 
 // Update game objects
@@ -92,11 +97,16 @@ var update = function (modifier) {
 
 // Print reddit line
 var reddit = function () {
+  // var title = globalResponse.data.children[postId].data.title
+  if (globalResponse) {
+    var title = globalResponse.data.children[postId].data.title
+  }
+
   ctx.fillStyle = "rgb(250, 250, 250)";
   ctx.font = "24px Helvetica";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
-  ctx.fillText(globalTitle, 32, 32);
+  ctx.fillText(title, 32, 32);
 }
 
 // Draw everything
