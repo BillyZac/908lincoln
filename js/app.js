@@ -90,6 +90,15 @@ var update = function (modifier) {
 	}
 };
 
+// Print reddit line
+var reddit = function () {
+  ctx.fillStyle = "rgb(250, 250, 250)";
+  ctx.font = "24px Helvetica";
+  ctx.textAlign = "left";
+  ctx.textBaseline = "top";
+  ctx.fillText(globalTitle, 32, 32);
+}
+
 // Draw everything
 var render = function () {
 	if (bgReady) {
@@ -104,14 +113,8 @@ var render = function () {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
 	}
 
-	// Score
-	ctx.fillStyle = "rgb(250, 250, 250)";
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText("Monsterrs caught: " + monstersCaught, 32, 32);
-	ctx.fillText(globalTitle, 32, 82);
-
+	// Say Reddit line
+  reddit();
 };
 
 // The main game loop
