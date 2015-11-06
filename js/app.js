@@ -12,3 +12,15 @@ bgImage.onload = function () {
 	bgReady = true;
 };
 bgImage.src = "./images/background.png";
+
+// Game objects
+var hero = {
+	speed: 256, // movement in pixels per second
+	x: 0,
+	y: 0
+};
+var monster = {
+	x: 0,
+	y: 0
+};
+var monstersCaught = 0;
