@@ -102,11 +102,13 @@ var reddit = function () {
     var title = globalResponse.data.children[postId].data.title
   }
 
-  ctx.fillStyle = "rgb(250, 250, 250)";
-  ctx.font = "24px Helvetica";
-  ctx.textAlign = "left";
-  ctx.textBaseline = "top";
-  ctx.fillText(title, 32, 32);
+  if (postId > 1) {
+    ctx.fillStyle = "rgb(250, 250, 250)";
+    ctx.font = "24px Helvetica";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText(title, 32, 32);
+  }
 }
 
 // Draw everything
