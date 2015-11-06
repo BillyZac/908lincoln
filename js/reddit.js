@@ -7,23 +7,6 @@ request.onreadystatechange = function() {
     var response = JSON.parse(this.responseText)
     global = response
     for (var i=1; i<20; i++) {
-      // Create post div
-      // var post = document.createElement('div')
-      // post.className = "post"
-
-      // Thumbnail
-      // var thumbURL = response.data.children[i].data.thumbnail
-      // var newPic = document.createElement('img')
-      // newPic.className = 'thumb'
-      // newPic.src = thumbURL
-      // post.appendChild(newPic)
-
-      // Score
-      // var score = global.data.children[i].data.score
-      // var newScore = document.createElement('span')
-      // newScore.className = 'score'
-      // newScore.innerText = score
-      // post.appendChild(newScore)
 
       // Title
       var title = global.data.children[i].data.title
@@ -35,11 +18,6 @@ request.onreadystatechange = function() {
       newTitle.innerText = title
       console.log(title)
       globalTitle = title
-      // post.appendChild(newTitle)
-
-      // Add post to section
-      // section.appendChild(post)
-
     }
   }
 }
