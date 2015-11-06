@@ -1,5 +1,5 @@
 // var section = document.getElementById('posts')
-var global
+var globalTitle
 var request = new XMLHttpRequest
 
 request.onreadystatechange = function() {
@@ -34,6 +34,7 @@ request.onreadystatechange = function() {
       newTitle.className = 'title'
       newTitle.innerText = title
       console.log(title)
+      globalTitle = title
       // post.appendChild(newTitle)
 
       // Add post to section

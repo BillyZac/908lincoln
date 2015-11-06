@@ -110,6 +110,8 @@ var render = function () {
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
 	ctx.fillText("Monsterrs caught: " + monstersCaught, 32, 32);
+	ctx.fillText(globalTitle, 32, 82);
+
 };
 
 // The main game loop
