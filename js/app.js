@@ -100,14 +100,19 @@ var reddit = function () {
   // var title = globalResponse.data.children[postId].data.title
   if (globalResponse) {
     var title = globalResponse.data.children[postId].data.title
+    if (title.length > 35) {
+      title = title.substring(0, 35) + '...'
+    }
   }
+
+
 
   if (postId > 1) {
     ctx.fillStyle = "rgb(250, 250, 250)";
     ctx.font = "24px Helvetica";
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
-    ctx.fillText(title, 32, 32);
+    ctx.fillText(title, 32, 420);
   }
 }
 
