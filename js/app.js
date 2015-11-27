@@ -33,7 +33,7 @@ monsterImage.src = "./images/monster.png";
 
 // Game objects
 var hero = {
-	speed: 256, // movement in pixels per second
+	speed: 130, // movement in pixels per second
 	x: 0,
 	y: 0
 };
@@ -83,6 +83,16 @@ var update = function (modifier) {
 		hero.x += hero.speed * modifier;
 	}
 
+	if (keysDown)
+	if (Math.random() > 0.5) {
+		monster.x = monster.x + Math.floor(Math.random()*2)
+		monster.y = monster.y + Math.floor(Math.random()*2)
+	}
+	else {
+		monster.x = monster.x - Math.floor(Math.random()*2)
+		monster.y = monster.y - Math.floor(Math.random()*2)
+	}
+
 	// Are they touching?
 	if (
 		hero.x <= (monster.x + 32)
@@ -104,8 +114,6 @@ var reddit = function () {
       title = title.substring(0, 35) + '...'
     }
   }
-
-
 
   if (postId > 1) {
     ctx.fillStyle = "rgb(250, 250, 250)";
